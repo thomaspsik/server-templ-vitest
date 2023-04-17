@@ -1,4 +1,4 @@
-# server-templ
+# server-templ-vitest
 Express server template with PostgreSQL integration, vitest and supertest.
 Based on https://github.com/Robert-Baumgartner/server-templ
 
