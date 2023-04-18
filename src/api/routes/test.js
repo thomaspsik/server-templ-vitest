@@ -1,15 +1,8 @@
 import express from 'express';
-import asyncHandler from 'express-async-handler';
-import { query } from '../../../boilerplate/db/index.js';
+import { getTest } from '../../controller/test.js';
 
 const router = express.Router();
 
-router.get(
-  '/',
-  asyncHandler(async (req, res) => {
-    const { rows } = await query("SELECT 'It works' as test");
-    res.status(200).json(rows);
-  }),
-);
+router.get('/', getTest);
 
 export default router;
