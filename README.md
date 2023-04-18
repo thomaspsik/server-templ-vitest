@@ -24,7 +24,6 @@ npm test
 ```
 
 ### Start for Test coverage (once) 
-You might need to install c8 and rerun the command.
 
 ```sh
 npm run coverage
