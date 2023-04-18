@@ -1,4 +1,4 @@
-# server-templ
+# server-templ-vitest
 Express server template with PostgreSQL integration, vitest and supertest.
 Based on https://github.com/Robert-Baumgartner/server-templ
 
@@ -23,7 +23,8 @@ npm run dev
 npm test
 ```
 
-### Start for Test coverage (once) - you might need to install c8 and rerun
+### Start for Test coverage (once) 
+You might need to install c8 and rerun the command.
 
 ```sh
 npm run coverage
