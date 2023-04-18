@@ -1,8 +1,11 @@
+import { close } from '../boilerplate/db/index.js';
 import supertest from 'supertest';
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
-import app from '../src/app.js'; // Link to server setup
-import { close } from '../boilerplate/db/index.js';
+import debug from 'debug';
 
+import app from '../src/app.js'; // Link to server setup
+
+const testlog = debug("testlog");
 // Inspiration from:
 // https://zellwk.com/blog/endpoint-testing/
 
@@ -10,12 +13,12 @@ describe('test REST Service', () => {
   let request = null;
 
   beforeAll(() => {
-    console.log('before all tests: start server');
+    testlog('before all tests: start server');
     request = supertest.agent(app);
   });
 
   afterAll(async () => {
-    console.log('after all tests: close server');
+    testlog('after all tests: close server');
     await close();
   });
 
