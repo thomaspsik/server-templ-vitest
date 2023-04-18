@@ -5,7 +5,7 @@ import path from 'path';
 import debug from 'debug';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
-import testRoute from './api/routes/test.js';
+import testRoute from './api/routes/testRoutes.js';
 
 dotenv.config();
 debug.enable(process.env.DEBUG); // enable DEBUG from .env
@@ -32,8 +32,9 @@ app.use(errorHandler);
 app.use(notFound);
 
 startup(`Mode is set to: ${process.env.MODE}`);
+
 // don´t start server when in test mode
-if (process.env.MODE !== 'test') {
+if (['development', 'production'].includes(process.env.MODE)) {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => startup(`Server is running on port ${PORT}`));
 } else {

@@ -1,11 +1,12 @@
-import { close } from '../boilerplate/db/index.js';
+import debug from 'debug';
 import supertest from 'supertest';
 import { describe, it, beforeAll, afterAll, expect } from 'vitest';
-import debug from 'debug';
+
+import { close } from '../boilerplate/db/index.js';
 
 import app from '../src/app.js'; // Link to server setup
 
-const testlog = debug("testlog");
+const testlog = debug('testlog');
 // Inspiration from:
 // https://zellwk.com/blog/endpoint-testing/
 
