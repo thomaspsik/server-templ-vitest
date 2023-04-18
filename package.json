@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "set MODE=test && set DEBUG= && vitest",
-    "coverage": "set MODE=test && set DEBUG= && vitest run --coverage",
+    "test": "set MODE=test && set DEBUG=testlog && vitest",
+    "coverage": "set MODE=test && set DEBUG=testlog && vitest run --coverage",
     "dev": "set MODE=development && nodemon src/app.js",
     "start": "set MODE=production && set DEBUG=startup && node src/app.js",
     "lint": "eslint . --ext .js"
@@ -34,6 +34,7 @@
     "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-vitest": "^0.1.4",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3",
     "vitest": "^0.30.1"
