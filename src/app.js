@@ -31,6 +31,8 @@ app.use('/test', testRoute);
 app.use(errorHandler);
 app.use(notFound);
 
+process.env.MODE = process.env.MODE.trim();
+
 startup(`Mode is set to: ${process.env.MODE}`);
 
 // don´t start server when in test mode
