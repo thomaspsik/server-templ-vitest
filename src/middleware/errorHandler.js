@@ -1,14 +1,14 @@
-// eslint-disable-next-line
-import colors from 'colors';
-// REST Service
-// error handler functions
+import chalk from 'chalk';
 
-export const errorHandler = (err, _req, res, _next) => {
-  console.log(`Error: ${err.stack}`.bgRed);
-  res.status(500).send(err.message);
+const errorHandler = (err, _req, res, _next) => {
+  console.log('Error ===> ', chalk.red(err.message));
+  console.log('Line  ===>: ', chalk.blue(err.stack));
+  res.status(500).send('An error occurred on the server');
 };
 
-export const notFound = (req, res) => {
-  console.log(`Error 404: Route not found ${req.method} ${req.originalUrl}`.red);
-  res.status(404).end();
+const notFoundHandler = (req, res) => {
+  console.log('Not Found ===> ', chalk.blue(req.method), chalk.blue(req.originalUrl));
+  res.status(404).send('The resource was not found on this server');
 };
+
+export { errorHandler, notFoundHandler };
