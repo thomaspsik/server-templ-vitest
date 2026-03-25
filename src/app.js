@@ -1,9 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import path from 'path';
+import path from 'node:path';
 import debug from 'debug';
-import { errorHandler, notFound } from './middleware/errorHandler.js';
 
 import testRoute from './api/routes/testRoutes.js';
 
