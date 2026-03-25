@@ -1,7 +1,17 @@
 {
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.json", "**/*.css", "**/*.scss"]
+    "includes": [
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.json",
+      "**/*.css",
+      "**/*.scss",
+      "!dist",
+      "!**/coverage"
+    ]
   },
   "formatter": {
     "enabled": true,
