@@ -1,10 +1,11 @@
-import express from 'express';
-import morgan from 'morgan';
-import dotenv from 'dotenv';
 import path from 'node:path';
 import debug from 'debug';
+import dotenv from 'dotenv';
+import express from 'express';
+import morgan from 'morgan';
 
 import testRoute from './api/routes/testRoutes.js';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
 debug.enable(process.env.DEBUG); // enable DEBUG from .env
@@ -28,7 +29,7 @@ app.use(express.json());
 app.use('/test', testRoute);
 
 app.use(errorHandler);
-app.use(notFound);
+app.use(notFoundHandler);
 
 process.env.MODE = process.env.MODE.trim();
 
